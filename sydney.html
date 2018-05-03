@@ -1049,6 +1049,74 @@ body {
     font-size: 18px;
   }
 }
+  
+@media only screen and (min-device-width: 500px) 
+                   and (max-device-width: 840px) 
+                   and (orientation: landscape) {
+
+ .hero > * {
+    display: none;
+  }
+
+  .hero {
+    display: none;
+  }
+
+  .img_tablet {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero > * {
+    display: none;
+  }
+
+  .top_reduced {
+    display: block;
+  }
+
+  .top_reduced > * {
+    font-size: 8vw;
+  }
+
+  .topic {
+    opacity: 0.8;
+  }
+
+  .intro h1,
+  .end h1,
+  .activities h1 {
+    font-size: 20px;
+  }
+
+  .activity_intro p {
+    font-size: 15px;
+  }
+  
+  .first p,
+  .intro p,
+  .activity_intro p,
+  .why_intro p,
+  .end p {
+ font-size: 16px;                      
+                     }                   
+
+  .reason_info p {
+    width: auto;
+  }
+
+  .end h1,
+  .intro h1 {
+    padding: 0 5px 0 5px;
+  }
+  
+  .love_end img {
+    width: 20%;
+  }
+}  
+  
 
 @media only screen and (max-width: 500px) {
   .hero > * {
