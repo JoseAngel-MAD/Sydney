@@ -1,1 +1,782 @@
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato";
+  overflow-x: hidden;
+}
+
+/* *:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+} */
+
+.main {
+  display: -ms-grid;
+  display: grid;
+}
+
+.top {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: "hero";
+}
+
+.hero {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: hero;
+  /*background: url(img/Sydney-min.jpg)no-repeat center;*/
+  background: url("https://s14.postimg.cc/6dbo1ctwh/Sydney-min.jpg")no-repeat center;
+  /*si se cambia esta imagen, es necesario cambiar las imágenes posteriores de media queries para iMac, si no se hace, entonces no se verá nada o se verá la imagen anterior, algo que no supongo que no se quiere en ese momento.*/
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.top_reduced {
+  display: none;
+}
+
+.top_reduced > * {
+  padding: 5px;
+  font-size: 7vw;
+  text-align: center;
+}
+
+.top_reduced h1:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+  width: 60px;
+  border-bottom: 1px solid black;
+}
+.top_reduced h2:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 80px;
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+
+.hero > * {
+  padding: 5px;
+  background: #ffc600;
+  font-size: 6vw;
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.img_tablet {
+  margin: 0;
+  padding: 0;
+}
+
+.first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.first p,
+.intro p,
+.activity_intro p,
+.why_intro p,
+.end p {
+  font-size: 18px;
+  line-height: 2em;
+  text-align: justify;
+  padding: 2.66667rem calc(50% - 300px);
+}
+
+.intro h1 {
+  font-size: 45px;
+  text-align: center;
+}
+
+.intro h2 {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 35px;
+  text-align: center;
+}
+
+.topics {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.topic {
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0.6;
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.topic a {
+  text-decoration: none;
+  color: black;
+}
+
+.topic:hover {
+  opacity: 1;
+}
+
+.topic img {
+  width: 100px;
+}
+
+.topic h3:before {
+  content: "";
+  display: block;
+  margin: 5px auto;
+  width: 50px;
+  padding: 5px;
+  border-bottom: 2px solid black;
+}
+
+.activity_columns {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.activity_column h4 {
+  font-size: 23px;
+}
+
+.activity_column h4:after {
+  content: "";
+  display: block;
+  width: 70px;
+  padding: 5px;
+  border-bottom: 2px solid black;
+}
+
+.activity_column p {
+  line-height: 1.8em;
+  padding: 2px;
+}
+
+.activity h1 {
+  font-size: 45px;
+  text-align: center;
+}
+
+#places {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#fff),
+    to(#dcdcc6)
+  );
+  background-image: -webkit-linear-gradient(top, #fff, #dcdcc6);
+  background-image: -o-linear-gradient(top, #fff, #dcdcc6);
+  background-image: linear-gradient(to bottom, #fff, #dcdcc6);
+  padding-top: 10px;
+}
+
+#nature {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#cce5cc),
+    to(#e5f2e5)
+  );
+  background-image: -webkit-linear-gradient(top, #cce5cc, #e5f2e5);
+  background-image: -o-linear-gradient(top, #cce5cc, #e5f2e5);
+  background-image: linear-gradient(to bottom, #cce5cc, #e5f2e5);
+  padding-top: 10px;
+}
+
+#beachs {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ccccff),
+    color-stop(#e1bf92),
+    to(#e1bf92)
+  );
+  background-image: -webkit-linear-gradient(top, #ccccff, #e1bf92, #e1bf92);
+  background-image: -o-linear-gradient(top, #ccccff, #e1bf92, #e1bf92);
+  background-image: linear-gradient(to bottom, #ccccff, #e1bf92, #e1bf92);
+  padding-top: 10px;
+}
+#luxury {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#fffbe5),
+    to(#fff7cc)
+  );
+  background-image: -webkit-linear-gradient(top, #fffbe5, #fff7cc);
+  background-image: -o-linear-gradient(top, #fffbe5, #fff7cc);
+  background-image: linear-gradient(to bottom, #fffbe5, #fff7cc);
+  padding-top: 10px;
+}
+
+#shopping {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#ffffff),
+    to(#e5e5e5)
+  );
+  background-image: -webkit-linear-gradient(bottom, #ffffff, #e5e5e5);
+  background-image: -o-linear-gradient(bottom, #ffffff, #e5e5e5);
+  background-image: linear-gradient(to top, #ffffff, #e5e5e5);
+  padding-top: 10px;
+}
+
+#sports {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ffe5ea),
+    to(#ffffff)
+  );
+  background-image: -webkit-linear-gradient(top, #ffe5ea, #ffffff);
+  background-image: -o-linear-gradient(top, #ffe5ea, #ffffff);
+  background-image: linear-gradient(to bottom, #ffe5ea, #ffffff);
+  padding-top: 10px;
+}
+
+#culture {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#edd4d4),
+    to(#e4bfbf)
+  );
+  background-image: -webkit-linear-gradient(top, #edd4d4, #e4bfbf);
+  background-image: -o-linear-gradient(top, #edd4d4, #e4bfbf);
+  background-image: linear-gradient(to bottom, #edd4d4, #e4bfbf);
+  padding-top: 10px;
+}
+
+#food {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ffffe5),
+    to(#ffffcc)
+  );
+  background-image: -webkit-linear-gradient(top, #ffffe5, #ffffcc);
+  background-image: -o-linear-gradient(top, #ffffe5, #ffffcc);
+  background-image: linear-gradient(to bottom, #ffffe5, #ffffcc);
+  padding-top: 10px;
+}
+
+.why_intro h1 {
+  font-size: 47px;
+  text-align: center;
+  font-family: "Lato";
+}
+
+.love {
+  color: red;
+}
+
+.why {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.number {
+  font-family: "Lato";
+  color: #d91e18;
+  font-size: 200px;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+.reason {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px 600px;
+  grid-template-columns: 200px 600px;
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+.reason_info {
+  -ms-grid-column-align: center;
+  justify-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+.reason_info h4 {
+  text-align: center;
+  font-size: 22px;
+}
+.reason_info h4:after {
+  content: "";
+  display: block;
+  margin: 5px auto;
+  width: 40px;
+  padding: 5px;
+  border-bottom: 2px solid black;
+}
+
+.reason_info p {
+  font-size: 18px;
+  line-height: 1.8em;
+}
+
+.end h1 {
+  font-size: 44px;
+  text-align: center;
+  font-family: "Lato";
+}
+
+.end {
+  margin-top: 50px;
+}
+
+.end a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 4px solid yellow;
+}
+
+.love_end {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: -20px;
+}
+
+.love_end > * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: 30px;
+}
+
+.love_end h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.love_end img {
+  width: 70px}
+
+
+@media only screen and (min-width: 2400px) {
+  .hero {
+    background: url("https://s14.postimg.cc/9vbpy2c4h/sydney_max.jpg")no-repeat center;
+    background-size: 100% auto;
+    /*     padding-top: 150px; */
+    /*     border-radius: 300px; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /*   max-height: auto; */
+    /*   width: 100%; */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .hero > * {
+    margin: 50px;
+  }
+
+  .first p,
+  .intro p,
+  .activity_intro p,
+  .why_intro p,
+  .end p,
+  .reason_info p,
+  .activity_column p {
+    font-size: 22px;
+  }
+
+  .activity_columns {
+    -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  .topics {
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .activity_columns,
+  .topics {
+    margin: 0 500px;
+  }
+
+  .reason {
+    -ms-grid-columns: 300px 1000px;
+    grid-template-columns: 300px 1000px;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 1900px) and (max-width: 2399px) {
+  .hero {
+    background: url("https://s14.postimg.cc/9vbpy2c4h/sydney_max.jpg")no-repeat center;
+    background-size: 100% auto;
+    /*     padding-top: 150px; */
+    /*     border-radius: 300px; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /*   max-height: auto; */
+    /*   width: 100%; */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .hero > * {
+    margin: 50px;
+  }
+
+  .first p,
+  .intro p,
+  .activity_intro p,
+  .why_intro p,
+  .end p,
+  .reason_info p,
+  .activity_column p {
+    font-size: 20px;
+  }
+
+  .activity_columns,
+  .topics {
+    margin: 0 250px;
+    /*     padding: 0 250px; */
+  }
+
+  .activity_columns {
+    -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .topics {
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .reason {
+    -ms-grid-columns: 300px 800px;
+    grid-template-columns: 300px 800px;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+}
+
+
+
+@supports (-webkit-overflow-scrolling: touch) {
+  .hero {
+    display: none;
+  }
+
+  .img_tablet {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+  }
+
+  .hero > * {
+    display: none;
+  }
+
+  .top_reduced {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .activity_columns,
+  .topics {
+    padding: 0 100px 0 100px;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .number {
+    font-size: 150px;
+    -ms-grid-column-align: center;
+    justify-self: center;
+  }
+
+  .reason {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .love_end {
+    -webkit-box-orient: vertical;
+
+    -webkit-box-direction: normal;
+
+    -ms-flex-direction: column;
+
+    flex-direction: column;
+  }
+
+  .love_end img {
+    margin: auto;
+  }
+
+  .reason_info p {
+    width: 70vw;
+  }
+}
+
+@media only screen and (max-width: 899px) {
+  .hero {
+    display: none;
+  }
+
+  .img_tablet {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+  }
+
+  .hero > * {
+    display: none;
+  }
+
+  .top_reduced {
+    display: block;
+  }
+
+  .top_reduced > * {
+    font-size: 5vw;
+  }
+
+  .topics {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .activity_columns {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .first p,
+  .intro p,
+  .activity_intro p,
+  .why_intro p,
+  .end p {
+    margin: 10px 0;
+    padding: 40px;
+    text-align: justify;
+  }
+
+  .intro h1,
+  .end h1,
+  .activities h1 {
+    font-size: 30px;
+  }
+  .intro h2 {
+    font-size: 27px;
+  }
+
+  .activities h4 {
+    font-size: 18px;
+  }
+}
+  
+@media only screen and (min-device-width: 500px) 
+                   and (max-device-width: 840px) 
+                   and (orientation: landscape) {
+
+ .hero > * {
+    display: none;
+  }
+
+  .hero {
+    display: none;
+  }
+
+  .img_tablet {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero > * {
+    display: none;
+  }
+
+  .top_reduced {
+    display: block;
+  }
+
+  .top_reduced > * {
+    font-size: 6vw;
+  }
+
+  .topic {
+    opacity: 0.8;
+  }
+
+  .intro h1,
+  .end h1,
+  .activities h1 {
+    font-size: 30px;
+  }
+
+  
+  .first p,
+  .intro p,
+  .activity_intro p,
+  .why_intro p,
+  .end p {
+    font-size: 17px;
+    margin: 0 30px;
+    }    
+                                        
+  .reason_info p {
+    width: 70vw;
+  }
+
+  .end h1,
+  .intro h1 {
+    padding: 0 5px 0 5px;
+  }
+  
+  .love_end img {
+    width: 100px;
+  }
+}  
+  
+
+@media only screen and (max-width: 500px) {
+  .hero > * {
+    display: none;
+  }
+
+  .hero {
+    display: none;
+  }
+
+  .img_tablet {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero > * {
+    display: none;
+  }
+
+  .top_reduced {
+    display: block;
+  }
+
+  .top_reduced > * {
+    font-size: 8vw;
+  }
+
+  .topic {
+    opacity: 0.8;
+  }
+
+  .intro h1,
+  .end h1,
+  .activities h1 {
+    font-size: 20px;
+  }
+
+  .activity_intro p {
+    font-size: 16px;
+  }
+
+  .reason_info p {
+    width: auto;
+  }
+
+  .end h1,
+  .intro h1 {
+    padding: 0 5px 0 5px;
+  }
+  
+  .number{
+    font-size: 100px;
+  }
+  
+  .love_end img {
+    width: 20%;
+  }
+}
+  
