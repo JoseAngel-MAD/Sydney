@@ -6,12 +6,6 @@ body {
   overflow-x: hidden;
 }
 
-/* *:before,
-*:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-} */
-
 .main {
   display: -ms-grid;
   display: grid;
@@ -30,9 +24,7 @@ body {
   grid-row: 1;
   grid-column: 1;
   grid-area: hero;
-  /*background: url(img/Sydney-min.jpg)no-repeat center;*/
   background: url("https://s14.postimg.cc/6dbo1ctwh/Sydney-min.jpg")no-repeat center;
-  /*si se cambia esta imagen, es necesario cambiar las imágenes posteriores de media queries para iMac, si no se hace, entonces no se verá nada o se verá la imagen anterior, algo que no supongo que no se quiere en ese momento.*/
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -417,13 +409,9 @@ body {
   .hero {
     background: url("https://s14.postimg.cc/9vbpy2c4h/sydney_max.jpg")no-repeat center;
     background-size: 100% auto;
-    /*     padding-top: 150px; */
-    /*     border-radius: 300px; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    /*   max-height: auto; */
-    /*   width: 100%; */
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -477,13 +465,9 @@ body {
   .hero {
     background: url("https://s14.postimg.cc/9vbpy2c4h/sydney_max.jpg")no-repeat center;
     background-size: 100% auto;
-    /*     padding-top: 150px; */
-    /*     border-radius: 300px; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    /*   max-height: auto; */
-    /*   width: 100%; */
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -513,7 +497,6 @@ body {
   .activity_columns,
   .topics {
     margin: 0 250px;
-    /*     padding: 0 250px; */
   }
 
   .activity_columns {
