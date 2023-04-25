@@ -422,11 +422,6 @@ body {
   color: black;
 }
 
-
-footer{
-    text-align: center;
-}
-
 @media only screen and (min-width: 2400px) {
   .hero {
     background: url("https://s14.postimg.cc/9vbpy2c4h/sydney_max.jpg")no-repeat center;
